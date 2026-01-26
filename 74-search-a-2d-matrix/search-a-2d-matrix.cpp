@@ -12,8 +12,6 @@ public:
                 i++;
             }
         }
-
-
         return flag;
     }
 };
