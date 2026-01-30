@@ -11,7 +11,7 @@ public:
                 int k=j+1;
                 int z=n-1;
                 while(k<z){
-                    long long sum = (long long)nums[i] + nums[j] + nums[k] + nums[z];
+                    long long sum = 1LL*nums[i] + nums[j] + nums[k] + nums[z];
                     if(sum<target){
                         k++;
                     }else if(sum>target){
