@@ -1,21 +1,18 @@
 class Solution {
 public:
-    int dp[500];
-    int solve(vector<int>&nums,int i){
-        if(i>=nums.size())return 0;
-        if(dp[i]!=-1)return dp[i];
-        int take=0;
 
+    int rob(vector<int>& nums) {int n=nums.size();
+        if(n==0)return 0;
+        if(n==1)return nums[0];
+        vector<int>dp(nums.size());
         
-            take=nums[i]+solve(nums,i+2);
-       
+        dp[0]=nums[0];
+        dp[1]=max(dp[0],nums[1]);
+        
+        for(int i=2;i<n;i++){
+            dp[i]=max(nums[i]+dp[i-2],dp[i-1]);
+        }
 
-        int nottake=solve(nums,i+1);
-
-        return dp[i]=max(take,nottake);
-    }
-    int rob(vector<int>& nums) {
-        memset(dp,-1,sizeof(dp));
-        return solve(nums,0);
+        return dp[n-1];
     }
 };
