@@ -1,15 +1,17 @@
 class Solution {
 public:
-    const int N=10001;
-    vector<int>dp=vector<int>(N,-1);
-    int jump(vector<int>& nums,int idx=0) {
-        if(idx>=nums.size()-1)return 0;
-        if(dp[idx]!=-1)return dp[idx];
-        int minjumps=10001;
-        for(int i=1;i<=nums[idx];i++){
-            minjumps=min(minjumps,1+jump(nums,idx+i));
+    
+    int jump(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>dp(nums.size(),10001);
+        dp[0]=0;
+        for(int i=0;i<n;i++){
+            for(int j = 1 ; j<=min(nums[i]+i,n-1);j++){
+                dp[j]=min(dp[j],dp[i]+1);
+            }
         }
 
-        return dp[idx] = minjumps;
+
+        return dp[n-1];
     }
 };
