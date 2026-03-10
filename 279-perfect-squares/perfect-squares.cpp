@@ -1,19 +1,29 @@
 class Solution {
 public:
-    int dp[10001];
-    int solve(int n){
-        if(n==0)return 0;
-        if(dp[n])return dp[n];
-        int ans=n;
-        for(int i=1;i*i<=n;i++){
-            
-            if(n-(i*i)>=0){ans=min(ans,1+solve(n-(i*i)));}
-        }
-        return dp[n]=ans;
-    }
+   
+   
     int numSquares(int n) {
+        if(n<=3)return n;
         
+        int dp[n+1];
+        dp[0]=0;
+        dp[1]=1;
+        dp[2]=2;
+        dp[3]=3;
+
         
-        return solve(n);
+        for(int i=4;i<=n;i++){
+          
+            dp[i]=i;
+            for(int j=1;j*j<=n;j++){
+                if(i-(j*j)>=0){
+                    dp[i]=min(dp[i],1+dp[i-(j*j)]);
+
+                }
+            }
+        }
+
+
+        return dp[n];
     }
 };
