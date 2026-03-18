@@ -1,21 +1,17 @@
 class Solution {
     public int change(int amount, int[] coins) {
-        int n = coins.length;
-        int[][] dp = new int[n + 1][amount + 1];
-
-        // Base case: 1 way to make amount 0 (empty set)
-        for (int i = 0; i <= n; i++) dp[i][0] = 1;
-
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= amount; j++) {
-                if (coins[i - 1] <= j) {
-                    // Inclusion: use current coin (dp[i]) + Exclusion: skip current coin (dp[i-1])
-                    dp[i][j] = dp[i][j - coins[i - 1]] + dp[i - 1][j];
-                } else {
-                    dp[i][j] = dp[i - 1][j];
-                }
-            }
+       int n = coins.length;
+       int[] a=new int[amount+1];
+       for(int i=0;i<=amount;i++){
+        a[i]=0;
+       }
+       a[0]=1;
+       for(int i:coins){
+        for(int j=i;j<=amount;j++){
+            if(j-i>=0){a[j]+=a[j-i];}
         }
-        return dp[n][amount];
+       }
+
+       return a[amount];
     }
 }
