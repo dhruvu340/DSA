@@ -10,11 +10,8 @@ public:
 
        vector<vector<string>>ans;
        for(auto i:m){
-        vector<string>t;
-        for(auto j:i.second){
-            t.push_back(j);
-        }
-        ans.push_back(t);
+        
+        ans.push_back(i.second);
        }
 
         return ans;
