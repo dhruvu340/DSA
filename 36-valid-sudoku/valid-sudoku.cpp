@@ -12,19 +12,16 @@ public:
 
             if(board[i][col]==target)return false;
         }
+        // row/3 denotes the number of that cell in order to find position in grid of 3 and after finding the number we multiply * 3 to find actual position
 
-
-        int startRow = (row / 3) * 3;
-int startCol = (col / 3) * 3;
-
-for (int i = startRow; i < startRow + 3; i++) {
-    for (int j = startCol; j < startCol + 3; j++) {
-        if (i == row && j == col) continue;
-
-        if (board[i][j] == target) return false;
-    }
-}
-
+       int sr=(row/3)*3;
+       int sc=(col/3)*3;
+       for(int i=sr;i<sr+3;i++){
+        for(int j=sc;j<sc+3;j++){
+            if(i==row&&j==col)continue;
+            if(board[i][j]==target)return false;
+        }
+       }
 
 return true;
 
