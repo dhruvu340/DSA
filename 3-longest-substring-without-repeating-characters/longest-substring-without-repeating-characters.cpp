@@ -4,12 +4,12 @@ public:
         int l=0;
         int r=0;
         int ans=0;
-        vector<int>v(128,0);
+        vector<int>v(128,-1);
         while(r<s.size()){
-            while(v[s[r]]!=0){
-                v[s[l++]]--;
+            if(v[s[r]]>=l){
+                l=v[s[r]]+1;
             }
-            v[s[r]]++;
+            v[s[r]]=r;
             ans=max(ans,r-l+1);
             r++;
         }
