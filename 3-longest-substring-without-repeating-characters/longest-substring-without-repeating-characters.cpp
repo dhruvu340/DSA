@@ -4,12 +4,12 @@ public:
         int l=0;
         int r=0;
         int ans=0;
-        unordered_set<int>se;
+        vector<int>v(128,0);
         while(r<s.size()){
-            while(se.count(s[r])){
-                se.erase(s[l++]);
+            while(v[s[r]]!=0){
+                v[s[l++]]--;
             }
-            se.insert(s[r]);
+            v[s[r]]++;
             ans=max(ans,r-l+1);
             r++;
         }
