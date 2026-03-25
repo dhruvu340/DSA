@@ -7,13 +7,16 @@ public:
             v.push_back({position[i],speed[i]});
         }
         sort(v.rbegin(),v.rend());
-        stack<float>st;
-        for(int i=0;i<n;i++){
-            float time = ((long double)target-v[i].first)/v[i].second;
-            if(st.empty()||time>st.top()){
-                st.push(time);
+        float prev=(long double)(target - v[0].first )/v[0].second;
+        int ct=1;
+        for(int i=1;i<n;i++){
+            float time  = (float)(target - v[i].first )/v[i].second;
+            if(time>prev){
+                prev=time;
+                ct++;
+
             }
         }
-        return st.size();
+        return ct;;
     }
 };
