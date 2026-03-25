@@ -1,18 +1,14 @@
 class Solution {
-public:
+public: 
     int maxProfit(vector<int>& v) {
-        int minsell=INT_MAX;
         int ans=0;
+        int maxi=INT_MAX;
         for(auto i:v){
-            minsell=min(minsell,i);
-            ans=max(ans,i-minsell);
+            maxi=min(maxi,i);
+            ans=max(ans,i-maxi);
+
         }
 
-
-
         return ans;
-
-
-        
     }
 };
