@@ -23,6 +23,11 @@ public:
             }
             r++;
         }
+
+         
+            if(n-1-l+1-maxfreq<=k){
+                ans = max(ans,n-1-l+1);
+            }
          
 
         return ans;
