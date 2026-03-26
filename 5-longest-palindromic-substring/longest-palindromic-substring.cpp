@@ -1,28 +1,31 @@
 class Solution {
 public:
-    vector<vector<int>>dp=vector<vector<int>>(1001,vector<int>(1001,-1));
-    bool solve(string &s,int i, int j){
-        if(i>=j)return true;
-        if(dp[i][j]!=-1)return dp[i][j];
-        if(s[i]==s[j]){
-           return dp[i][j]=solve(s,i+1,j-1);
-        }else{
-            return dp[i][j] = false;
-        }
-    }
     string longestPalindrome(string s) {
         int n=s.size();
-        string s1="";
-
-        for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
-                if(solve(s,i,j)){
-                    if(j-i+1>s1.size()){
-                       s1 = s.substr(i,j-i+1);
-                    }
+        int maxl=1;
+        int stidx=0;
+          vector<vector<bool>>t(n,vector<bool>(n));
+          for(int i=0;i<n;i++){
+            t[i][i]=true;
+          }
+        for(int l=2;l<=s.size();l++){
+            for(int i=0;i<n-l+1;i++){
+                int j=i+l-1;
+                if(s[i]==s[j]&&l==2){
+                    t[i][j]=true;
+                    maxl=2;
+                    stidx=i;
+                }else if(s[i]==s[j]&&t[i+1][j-1]){
+                    t[i][j]=true;
+                    maxl=j-i+1;
+                    stidx=i;
+                }else{
+                    t[i][j]=false;
                 }
             }
         }
-        return s1;
+
+        return s.substr(stidx,maxl);
+
     }
 };
