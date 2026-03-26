@@ -21,28 +21,19 @@ public:
 
 class Solution {
 public:
+    unordered_map<Node*,Node*>m;
     Node* cloneGraph(Node* node) {
         if(!node)return nullptr;
-        queue<Node*>q;
-        unordered_map<Node*,Node*>m;
-        q.push(node);
-        Node* copy=new Node(node->val,{});
-        m[node]=copy;
-        while(!q.empty()){
-            Node* temp=q.front();
-            q.pop();
-            for(auto padosi:temp->neighbors){
-               
-                if(m.find(padosi)==m.end()){
-                    Node* t1=new Node(padosi->val,{});
-                    m[padosi]=t1;
-                    q.push(padosi);
-                }
-                m[temp]->neighbors.push_back(m[padosi]);
+        
+        if(m.find(node)==m.end()){
+            m[node] = new Node(node->val,{});
+            for(Node* neighbors:node->neighbors){
+                m[node]->neighbors.push_back(cloneGraph(neighbors));
             }
         }
+        
+       
 
-
-        return copy;
+        return m[node];
     }
 };
