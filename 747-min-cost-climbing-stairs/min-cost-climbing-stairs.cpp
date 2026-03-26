@@ -2,15 +2,19 @@ class Solution {
 public:
     
     int minCostClimbingStairs(vector<int>& cost) {
-        vector<int>dp(1001,-1);
-        auto solve= [&](auto&& self, int i ) {
-            if(i>=cost.size())return 0;
-            if(dp[i]!=-1)return dp[i];
+        vector<int>dp(cost.size(),0);
+        int n=cost.size();
+        dp[0]=cost[0];
+        dp[1]=cost[1];
 
-            return dp[i] = cost[i] + min (self(self,i+1),self(self , i+2));
-        };  
+        for(int i=2;i<cost.size();i++){
+            dp[i]=1LL*(cost[i] + min(dp[i-1],dp[i-2]));
 
-        return min(solve(solve , 0) , solve(solve , 1));
+        }
+
+
+        return min(dp[n-2],dp[n-1]);
+        
 
     }
 };
