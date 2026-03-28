@@ -4,41 +4,53 @@ public:
         int n=mat.size();
         int m=mat[0].size();
 
-        vector<vector<int>>ans(n,vector<int>(m,0));
         
-        queue<vector<int>>q;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(mat[i][j]==0){q.push({i,j,0});mat[i][j]=0;}
-            }
-        }
+                if(mat[i][j]==0){continue;}
 
-        
-        vector<pair<int,int>>dir={{0,1},{0,-1},{1,0},{-1,0}};
-        while(!q.empty()){
-            int size=q.size();
-            while(size--){
-                int r=q.front()[0];
-                int c=q.front()[1];
-                int steps=q.front()[2];
-                q.pop();
-                ans[r][c]=steps;
+                int left=n*m;
+                int top=n*m;
 
-                for(auto i:dir){
-                    int rn=r+i.first;
-                    int cn=c+i.second;
-                    if(rn<0||rn>=n||cn>=m||cn<0||mat[rn][cn]==0){
-                        continue;
-                    }else{
-                        mat[rn][cn]=0;
-                        q.push({rn,cn,steps+1});
-                    }
+                if(i!=0){
+                    top=mat[i-1][j];
                 }
+
+                if(j!=0){
+                    left=mat[i][j-1];
+                }
+
+
+                mat[i][j]=min(left+1,top+1);
+
             }
         }
 
 
-        return ans;
+        for(int i=n-1;i>=0;i--){
+            for(int j=m-1;j>=0;j--){
+                if(mat[i][j]==0){continue;}
+
+                int bottom=n*m;
+                int right=n*m;
+
+                if(i!=n-1){
+                    bottom=mat[i+1][j];
+                }
+
+                if(j!=m-1){
+                    right=mat[i][j+1];
+                }
+
+
+                mat[i][j]=min({mat[i][j],bottom+1,right+1});
+
+            }
+        }
+
+       
+
+        return mat;
 
     }
 };
