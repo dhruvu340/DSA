@@ -5,11 +5,11 @@ public:
         int m=mat[0].size();
 
         vector<vector<int>>ans(n,vector<int>(m,0));
-        vector<vector<int>>vis(n,vector<int>(m,0));
+        
         queue<vector<int>>q;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(mat[i][j]==0){q.push({i,j,0});vis[i][j]=1;}
+                if(mat[i][j]==0){q.push({i,j,0});mat[i][j]=0;}
             }
         }
 
@@ -27,10 +27,10 @@ public:
                 for(auto i:dir){
                     int rn=r+i.first;
                     int cn=c+i.second;
-                    if(rn<0||rn>=n||cn>=m||cn<0||vis[rn][cn]==1){
+                    if(rn<0||rn>=n||cn>=m||cn<0||mat[rn][cn]==0){
                         continue;
                     }else{
-                        vis[rn][cn]=1;
+                        mat[rn][cn]=0;
                         q.push({rn,cn,steps+1});
                     }
                 }
