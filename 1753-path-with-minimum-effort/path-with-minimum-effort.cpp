@@ -5,16 +5,16 @@ public:
         int m=heights[0].size();
         vector<vector<int>> dist(n,vector<int>(m,INT_MAX));
         int ans=INT_MAX;
-        queue<vector<int>>q;
+        priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>>q;
         vector<pair<int,int>>dir={{0,1},{1,0},{-1,0},{0,-1}};
-        q.push({0,0});
+        q.push({0,0,0});
         dist[0][0]=0;
         while(!q.empty()){
-            int i=q.front()[0];
-            int j=q.front()[1];
-            int efforts=dist[i][j];
+            int i=q.top()[1];
+            int j=q.top()[2];
+            int efforts=q.top()[0];
             q.pop();
-            
+            if(i==n-1&&j==m-1)return efforts;
 
 
             for(auto d:dir){
@@ -27,13 +27,13 @@ public:
                 if(minefforts<dist[x][y]){
                     
                     dist[x][y]=minefforts;
-                    q.push({x,y});
+                    q.push({minefforts,x,y});
                 }
                 
             }
         }
 
-        return dist[n-1][m-1];
+        return 0;
     }
 };
 
