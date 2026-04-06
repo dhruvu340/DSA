@@ -8,15 +8,15 @@ public:
         if(grid[0][0]!=0)return -1;
 
         priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>>q;
-        q.push({1,0,0});
-        dist[0][0]=1;
+        q.push({0,0,0});
+        dist[0][0]=0;
         while(!q.empty()){
          
                 int distance=q.top()[0];
                 int i=q.top()[1];
                 int j=q.top()[2];
                 q.pop();
-                if(i==n-1&&j==m-1)return distance;
+                if(i==n-1&&j==m-1)return distance+1;
                 if(distance>dist[i][j])continue;
                 for(auto &d:dir){
                     int x=i+d.first;
