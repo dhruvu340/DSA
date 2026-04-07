@@ -1,7 +1,7 @@
 class Solution {
 public:
     int findChampion(int n, vector<vector<int>>& edges) {
-        set<int>s;
+        unordered_set<int>s;
         for(auto i:edges){
             s.insert(i[1]);
         }
