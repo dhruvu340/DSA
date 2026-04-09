@@ -5,13 +5,13 @@ public:
         if(i==nums.size()){
             if(sum==target){
                
-                return dp[i][10000+sum] = 1;
+                return dp[i][1000+sum] = 1;
                 
                 }
-            else return dp[i][10000+sum] = 0;
+            else return dp[i][1000+sum] = 0;
         }
 
-        if(dp[i][10000+sum]!=-1)return dp[i][10000+sum];
+        if(dp[i][1000+sum]!=-1)return dp[i][1000+sum];
 
         int add = sum + nums[i];
         int minus = sum - nums[i];
@@ -20,7 +20,7 @@ public:
         int e=solve(nums,target,minus,i+1);
 
 
-        return dp[i][10000+sum] = f+e;
+        return dp[i][1000+sum] = f+e;
     }
     int findTargetSumWays(vector<int>& nums, int target) {
         return solve(nums,target,0,0);
