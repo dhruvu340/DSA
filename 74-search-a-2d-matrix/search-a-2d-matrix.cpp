@@ -3,24 +3,18 @@ public:
     bool searchMatrix(vector<vector<int>>& nums, int target) {
         int n=nums.size();
         int m=nums[0].size();
-        //declare root of the bst.
-        int i=0;
-        int j=m-1;
-        while(i<n&&j>=0&&nums[i][j]!=target){
-            if(nums[i][j]>target){
-                //move left
-                j--;
-            }else{
-                //move down
-                i++;
-            }
+        int l=0;
+        int r=m*n-1;
+        while(l<=r){
+            int mid = l + (r-l)/2;
+            int row=(mid/m);
+            int col=mid%m;
+            if(nums[row][col]==target)return true;
+            else if(nums[row][col]>target)r=mid-1;
+            else l=mid+1;
         }
 
-        if(i>=n||j<0){
-            return false;
-        }else{
-            return true;
-        }
+        return false;
 
         
     }
