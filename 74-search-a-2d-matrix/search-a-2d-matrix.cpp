@@ -1,24 +1,27 @@
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int m=matrix.size();
-        int n=matrix[0].size();
-       int l=0;
-       int r=m*n-1;
-        bool flag=false;
-       while(l<r){
-        int mid=l+(r-l)/2;
-        if(matrix[mid/n][mid%n]==target){
-            flag=true;
-            break;
-        }else if(matrix[mid/n][mid%n]<target){
-            l=mid+1;
-        }else{
-            r=mid-1;
+    bool searchMatrix(vector<vector<int>>& nums, int target) {
+        int n=nums.size();
+        int m=nums[0].size();
+        //declare root of the bst.
+        int i=0;
+        int j=m-1;
+        while(i<n&&j>=0&&nums[i][j]!=target){
+            if(nums[i][j]>target){
+                //move left
+                j--;
+            }else{
+                //move down
+                i++;
+            }
         }
-       }
 
+        if(i>=n||j<0){
+            return false;
+        }else{
+            return true;
+        }
 
-       return flag||matrix[l/n][l%n]==target;
+        
     }
 };
