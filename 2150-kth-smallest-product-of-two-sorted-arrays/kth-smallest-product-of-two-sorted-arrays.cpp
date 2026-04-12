@@ -10,39 +10,37 @@ public:
         auto checker=[&](long long x)->bool{
             long long ct=0;
             for(int i=0;i<n;i++){
-                if(nums1[i]>0){int l=0;
-                int r=m-1;
-                int mi=-1;
-                while(l<=r){
-                    int mid = l+(r-l)/2;
-                    long long p=nums1[i]*1LL*nums2[mid];
-                    if(p<=x){
-                        mi=mid;
-                        l=mid+1;
-                    }else{
-                        r=mid-1;
-                    }
-                }ct+=(mi+1);
-                }else if(nums1[i]<0){
-
+                if(nums1[i]>=0){
                     int l=0;
-                int r=m-1;
-                int mi=m;
-                while(l<=r){
-                    int mid = l+(r-l)/2;
-                    long long p=nums1[i]*1LL*nums2[mid];
-                    if(p<=x){
-                        mi=mid;
-                        r=mid-1;
-                    }else{
-                        l=mid+1;
-                    }
+                    int r=m-1;
+                    long long mi=-1;
+                    while(l<=r){
+                        int mid=l+(r-l)/2;
+                        long long p=nums1[i]*1LL*nums2[mid];
+                        if(p<=x){
+                            mi=mid;
+                            l=mid+1;
+                        }else{
+                            r=mid-1;
+                        }
+                    } 
+                    ct+=(mi+1);
                 }
-
-                ct+=(m-mi);
-
-                }else{
-                    if(x>=0)ct+=m;
+                else{
+                    int l=0;
+                    int r=m-1;
+                    long long mi=m;
+                    while(l<=r){
+                        int mid=l+(r-l)/2;
+                        long long p=nums1[i]*1LL*nums2[mid];
+                        if(p<=x){
+                            mi=mid;
+                            r=mid-1;
+                        }else{
+                            l=mid+1;
+                        }
+                    } 
+                    ct+=(m-mi);
                 }
             }
             return ct>=k;
