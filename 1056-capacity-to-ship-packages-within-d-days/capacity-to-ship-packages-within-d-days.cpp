@@ -4,18 +4,16 @@ public:
         int l=*min_element(weights.begin(),weights.end());
         int r=accumulate(weights.begin(),weights.end(),0);
         auto predicate = [&](int x)->bool{
-            int ct = x ;
+            int ct = 0;
             int k=days;
             for(auto i:weights){
-                if(i<=ct){
-                    ct-=i;
-                }else{
+                if(ct+i>x){
                     k--;
                     if(k==0)return false;
-                    ct=x;
-                    ct-=i;
-                    if(ct<0)return false;
+                    ct=0;
                 }
+                ct+=i;
+                if(ct>x)return false;
             }
 
             return true;
