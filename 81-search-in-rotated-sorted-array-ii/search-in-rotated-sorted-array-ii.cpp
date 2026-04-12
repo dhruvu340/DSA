@@ -11,10 +11,10 @@ public:
                 l++;
 
             }else if(a[l]<=a[mid]){
-                if(a[l]<=target&&target<=a[mid])r=mid-1;
+                if(a[l]<=target&&target<a[mid])r=mid-1;
                 else l=mid+1;
             }else{
-                if(a[r]>=target&&target>=a[mid])l=mid+1;
+                if(a[r]>=target&&target>a[mid])l=mid+1;
                 else r=mid-1;
             }
 
