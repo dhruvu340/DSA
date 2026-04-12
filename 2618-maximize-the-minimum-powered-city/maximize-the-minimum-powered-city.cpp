@@ -34,8 +34,8 @@ public:
 
         
 
-        ll left=0;
-        ll right=1e18;
+        ll left=*min_element(stations.begin(),stations.end());
+        ll right=accumulate(stations.begin(),stations.end(),0LL)+k;
         ll ans=-1;
         while(left<=right){
             ll mid=left+(right-left)/2;
