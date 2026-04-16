@@ -1,39 +1,25 @@
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        
-        int ans=0;
-       int open = 0;
-       int close = 0;
-       for(auto i:s){
-        if(i=='(')open++;
-        else close++;
+        int n=s.size();
+        if(n==0)return 0;
 
-
-        if(open==close){
-            ans=max(ans,open+close);
-        }else if(close>open){
-            open=0;
-            close=0;
+        vector<int>dp(n,0);
+        for(int i=0;i<n;i++){
+            if(s[i]==')'){
+                if(i-1>=0){
+                    if(s[i-1]=='('){
+                        dp[i]= 2 + dp[max(i-2,0)];
+                    }else{
+                        if(i-1-dp[i-1]>=0&&s[i-1-dp[i-1]]=='('){
+                            dp[i]=2+dp[i-1]+dp[max(i-1-dp[i-1]-1,0)];
+                        }
+                    }
+                }
+            }
         }
-       }
-       open=0;
-       close=0;
-
-       reverse(s.begin(),s.end());
-       for(auto i:s){
-        if(i=='(')open++;
-        else close++;
 
 
-        if(open==close){
-            ans=max(ans,open+close);
-        }else if(close<open){
-            open=0;
-            close=0;
-        }
-       }
-
-        return ans;
+        return *max_element(dp.begin(),dp.end());
     }
 };
