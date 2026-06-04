@@ -1,13 +1,14 @@
 class Solution {
 public:
-    int  dfs (int i,unordered_map<int,vector<pair<int,int>>>&graph,vector<int>&vis){
-        int ct = 0;
+    int dfs(int i,unordered_map<int,vector<pair<int,int>>>&gr,vector<int>&vis){
         vis[i] = true;
-        for(auto j : graph[i]){
-            if(!vis[j.first]){
-                ct +=  dfs(j.first,graph,vis) + (j.second==1?0:1 );
+        int ct = 0;
+        for(auto v : gr[i]){
+            if(!vis[v.first]){
+                ct+=dfs(v.first,gr,vis) + (v.second == 0 );
             }
         }
+
         return ct;
     }
     int minReorder(int n, vector<vector<int>>& connections) {
