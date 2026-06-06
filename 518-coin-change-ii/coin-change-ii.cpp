@@ -1,19 +1,24 @@
 class Solution {
 public:
-    int dp[5001][301];
-    int solve(int amount ,vector<int>&coins,int i){
-        if(amount==0)return 1;
-        if(dp[amount][i]!=-1)return dp[amount][i];
-        int ans =0;
-        for(int idx=i;idx<coins.size();idx++){
-            if(coins[idx]<=amount){
-                ans += solve(amount - coins[idx] , coins,idx);
+    int change(int amount, vector<int>& coins) {
+        int n = coins.size();
+        vector<vector<int>>dp(amount+1,vector<int>(n,0));
+        for(int i=0;i<n;i++){
+            dp[0][i]=1;
+        }
+        
+
+        for(int i=1;i<=amount;i++){
+            for(int j=n-1;j>=0;j--){
+                dp[i][j] = 0;
+                for(int k = j;k<n;k++){
+                if(coins[k]<=i){
+                   dp[i][j] += 1LL*dp[i-coins[k]][k];
+                }
+
+                }
             }
         }
-        return dp[amount][i] = ans;
-    }
-    int change(int amount, vector<int>& coins) {
-        memset(dp,-1,sizeof(dp));
-        return solve(amount,coins,0);
+        return dp[amount][0];
     }
 };
