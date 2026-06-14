@@ -4,11 +4,10 @@ public:
         int ct  = 0;
         int i;
         int n=nums.size();
-       nums.insert(nums.end(),nums.begin(),nums.end());
-       for(int i=0;i<n;i++){
-        if(is_sorted(nums.begin() + i,nums.begin()+i + n ))return true;
-
-       }
-       return false;
+        for(int i=1;i<n;i++){
+            if(nums[i-1]>nums[i])ct++;
+        }
+        if(nums[n-1]>nums[0])ct++;
+        return ct <= 1;
     }
 };
