@@ -1,19 +1,31 @@
 class Solution {
 public:
+    bool isVowel(char c){
+        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+    }
     int maxVowels(string v, int k) {
         int ct = 0;
-        int ans =0;
-        for(int i=0;i<v.size();i++){
-            if(v[i] == 'a' || v[i] == 'e' || v[i] == 'i' || v[i] == 'o' || v[i] == 'u' ){
+        int ans = 0;
+        int l = 0;
+
+        for(int r = 0;r<v.size();r++){
+            if(isVowel(v[r])){
                 ct++;
+                cout<<ct<<endl;
             }
-            if(i>=k){
-                ct -= (v[i-k] == 'a' || v[i-k] == 'e' || v[i-k] == 'i' || v[i-k] == 'o' || v[i-k] == 'u' );
+
+
+            if(r>=k){
+               if(isVowel(v[l])){ ct--;}
+                l++;
+                
             }
-            if(i>=k-1){
-                ans=max(ans,ct);
-            }
+            
+
+            if(r>=k-1){ans = max(ans,ct); cout<<"ans ->" <<ans<<endl;}
         }
+
+
         return ans;
     }
 };
