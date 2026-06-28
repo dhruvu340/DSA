@@ -10,9 +10,9 @@ public:
                 sum -= 1LL*nums[i];
                 i++;
             }
-            if(sum*1LL*(j-i+1)<k){
+            
                 ans += 1LL*(j-i+1);
-            }
+            
         }
         return ans;
     }
