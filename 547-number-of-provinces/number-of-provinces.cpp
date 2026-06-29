@@ -1,22 +1,13 @@
 class Solution {
 public:
-    void bfs(unordered_map<int,vector<int>>graph,vector<bool>&vis,int i){
-        queue<int>q;
-        q.push(i);
+    void dfs(unordered_map<int,vector<int>>graph,vector<bool>&vis,int i){
+        
         vis[i] = true;
-        while(!q.empty()){
-            int size = q.size();
-            while(size--){
-                int top = q.front();
-                q.pop();
-                for(auto i : graph[top]){
-                    if(!vis[i]){vis[i] = true;
-                    q.push(i);}
-                }
+        for(auto j:graph[i]){
+            if(vis[j]==false){
+                dfs(graph,vis,j);
             }
         }
-
-        
     }
     int findCircleNum(vector<vector<int>>& rooms) {
         unordered_map<int,vector<int>>graph;
@@ -32,7 +23,7 @@ public:
         int ct =0;
         for(int i=0;i<n;i++){
             if(!vis[i]){
-                bfs(graph,vis,i);
+                dfs(graph,vis,i);
                 ct++;
             }
         }
