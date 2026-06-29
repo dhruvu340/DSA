@@ -4,19 +4,16 @@ public:
        int n=nums.size();
        long long sum = 0;
        int ans = INT_MAX;
-       priority_queue<pair<long long,int>,vector<pair<long long,int>>,greater<pair<long long,int>>>pq;
+       deque<pair<long long,int>>q;
+       q.push_back({0,-1});
        for(int i = 0;i<n;i++){
             sum += nums[i];
-            if(sum >= k){
-                ans = min(ans,i+1);
+            while(!q.empty() && q.back().first >= sum)q.pop_back();
+            q.push_back({sum,i});
+            while(!q.empty() && sum - q.front().first >= k){
+                ans=min(ans,i-q.front().second);
+                q.pop_front();
             }
-
-            while(!pq.empty() && sum - pq.top().first >= k){
-                ans = min(ans,i-pq.top().second);
-                pq.pop();
-            }
-
-            pq.push({sum,i});
        }
 
        return (ans == INT_MAX ) ? -1 : ans; 
