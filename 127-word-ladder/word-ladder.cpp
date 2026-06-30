@@ -1,30 +1,32 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string>s(wordList.begin(),wordList.end());
+        int sizeOfString = beginWord.size();
+        unordered_set<string>lookup(wordList.begin(),wordList.end());
         queue<pair<string,int>>q;
         q.push({beginWord,1});
+        lookup.erase(beginWord);
         while(!q.empty()){
-            int level = q.size();
-            while(level--){
-                string topSt =  q.front().first;
-                int count  = q.front().second;
+            int size = q.size();
+            while(size--){
+                string word = q.front().first;
+                int seqSize = q.front().second;
                 q.pop();
-                if(topSt == endWord)return count; 
-                for(int i = 0;i<beginWord.size();i++){
-                    char orig = topSt[i];
-                    for(char alpha = 'a';alpha<='z';alpha++){
-                        topSt[i] = alpha;
-                        if(s.find(topSt)!=s.end()){
-                            s.erase(topSt);
-                            q.push({topSt,count+1});
+                if(word == endWord)return seqSize;
+
+                for(int i=0;i<sizeOfString;i++){
+                    char orig = word[i];
+                    for(char c='a';c<='z';c++){
+                        word[i] = c;
+                        if(lookup.find(word)!=lookup.end()){
+                            q.push({word,seqSize+1});
+                            lookup.erase(word);
                         }
                     }
-                    topSt[i] = orig; 
+                    word[i] = orig;
                 }
             }
         }
-
         return 0;
     }
 };
