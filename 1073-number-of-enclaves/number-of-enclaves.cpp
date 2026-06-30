@@ -1,42 +1,31 @@
 class Solution {
 public:
-    int numEnclaves(vector<vector<int>>& board) {
-        int n=board.size();
-        int m=board[0].size();
-        queue<pair<int,int>>q;
+    vector<vector<int>> dir={{0,1},{1,0},{-1,0},{0,-1}}; 
+    void dfs(vector<vector<int>>&grid,int i,int j,int n,int m){
+        grid[i][j] = 0;
+        for(auto d:dir){
+            int x = i + d[0];
+            int y = j + d[1];
+            if(x>=0&&y>=0&&x<n&&y<m&&grid[x][y] == 1){
+                dfs(grid,x,y,n,m);
+            }
+        }
+    }
+    int numEnclaves(vector<vector<int>>& grid) {
+        int n = grid.size();
+        int m = grid[0].size();
         for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(board[i][j]==1 && (i==0||i==n-1||j==0||j==m-1)){
-                    q.push({i,j});
-                    board[i][j]=0;
-                   
+            for(int j = 0;j<m;j++){
+                if((i==0||j==0||i==n-1||j==m-1)&&grid[i][j] == 1){
+                    dfs(grid,i,j,n,m);
                 }
             }
         }
-        vector<pair<int,int>>dir={{0,1},{0,-1},{-1,0},{1,0}};
-        while(!q.empty()){
-            int size=q.size();
-            while(size--){
-                int r=q.front().first;
-                int c=q.front().second;
-                q.pop();
-                
-                for(auto i:dir){
-                    int rn=r+i.first;
-                    int cn=c+i.second;
-                    if(rn<n&&rn>=0&&cn<m&&cn>=0&&board[rn][cn]==1){
-                        board[rn][cn]=0;
-                        q.push({rn,cn});
-                    }
-                }
 
-            }
-        }
-
-    int ct=0;
+        int ct = 0 ;
         for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                ct+=board[i][j];
+            for(int j = 0;j<m;j++){
+                ct+=grid[i][j];
             }
         }
         return ct;
