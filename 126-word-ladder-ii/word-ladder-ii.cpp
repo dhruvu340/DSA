@@ -1,64 +1,74 @@
 class Solution {
 public:
-    unordered_map<string,int>mpp;
+    unordered_map<string ,vector<string>>adj;
+    vector<string>curr;
     vector<vector<string>>ans;
-    string b;
-    void dfs(string word,vector<string>&seq){
-        if(word==b){
-            reverse(seq.begin(),seq.end());
-            ans.push_back(seq);
-            reverse(seq.begin(),seq.end());
-            return;
+
+    vector<string> findneg(string &word,unordered_set<string>&s){
+        vector<string>neg;
+        for(int i = 0;i<word.size();i++){
+            char old = word[i];
+            for(char c='a';c<='z';c++){
+                word[i] = c;
+                if(c==old||!s.count(word)){
+                    continue;
+                }
+                neg.push_back(word);
+
+            }
+            word[i] = old;
         }
 
-        int steps=mpp[word];
-        for(int i=0;i<word.size();i++){
-            char orig=word[i];
-                for(char c='a';c<='z';c++){
-                    word[i]=c;
-                    if(mpp.find(word)!=mpp.end()&&mpp[word]+1==steps){
-                        seq.push_back(word);
-                        dfs(word,seq);
-                        seq.pop_back();
+        return neg;
+    }
+    void backtrack(string &src,string &dest){
+        if(src == dest){
+            ans.push_back(vector<string>(curr.rbegin(),curr.rend()));
+        }
+
+        for(int i = 0;i<adj[src].size();i++){
+            curr.push_back(adj[src][i]);
+            backtrack(adj[src][i],dest);
+            curr.pop_back();
+        }
+    }
+    void bfs(string beginWord,string endWord,unordered_set<string>&s){
+        queue<string>q;
+        q.push(beginWord);
+        if(s.find(beginWord)!=s.end()){
+            s.erase(beginWord);
+        }
+        unordered_map<string,int>enqueued;
+        enqueued[beginWord]=1;
+        while(!q.empty()){
+            vector<string>vis;
+            int size = q.size();
+            while(size--){
+                string currWord = q.front();
+                q.pop();
+                vector<string>neg = findneg(currWord,s);
+                for(auto i:neg){
+                    vis.push_back(i);
+                    adj[i].push_back(currWord);
+                    if(enqueued.find(i)==enqueued.end()){
+                        q.push(i);
+                        enqueued[i] = 1;
                     }
                 }
+            }
 
-                word[i]=orig;
+            for(int i = 0;i<vis.size();i++){
+                if(s.find(vis[i])!=s.end()){
+                    s.erase(vis[i]);
+                }
+            }
         }
     }
     vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
         unordered_set<string>s(wordList.begin(),wordList.end());
-        queue<string>q;
-        q.push(beginWord);
-        b=beginWord;
-        s.erase(beginWord);
-        mpp[beginWord]=1;
-        while(!q.empty()){
-            string word=q.front();
-            int steps=mpp[word];
-
-            if(word==endWord)break;
-            q.pop();
-            for(int i=0;i<word.size();i++){
-                char orig=word[i];
-                for(char c='a';c<='z';c++){
-                    word[i]=c;
-                    if(s.count(word)){
-                        q.push(word);
-                        mpp[word]=steps+1;
-                        s.erase(word);
-                    }
-                }
-
-                word[i]=orig;
-            }
-        }
-        if(mpp.find(endWord)!=mpp.end()){
-            vector<string>seq;
-            seq.push_back(endWord);
-            dfs(endWord,seq);
-        }
-
+        bfs(beginWord,endWord,s);
+        curr = {endWord};
+        backtrack(endWord,beginWord);
         return ans;
     }
 };
