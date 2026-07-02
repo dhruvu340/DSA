@@ -1,13 +1,25 @@
 class Solution {
 public:
     int dfs(int node,vector<vector<pair<int,int>>>&adj,vector<int>&vis){
-        vis[node] = 1;
+        queue<int>q;
+        q.push(node);
+        vis[node] = true;
         int ct = 0;
-        for(auto i:adj[node]){
-            int curr = i.first;
-            int dupli = i.second;
-            if(!vis[curr]){
-               ct += dupli + dfs(curr,adj,vis);
+        while(!q.empty()){
+            int size=q.size();
+            while(size--){
+                int currElement = q.front();
+                q.pop();
+                for(auto i:adj[currElement]){
+                    int el = i.first;
+                    int dup = i.second;
+
+                    if(!vis[el]){
+                        vis[el] = true;
+                        ct += dup;
+                        q.push(el);
+                    }
+                }
             }
         }
         return ct;
@@ -17,11 +29,11 @@ public:
         for(auto i:connections){
             int u = i[0];
             int v = i[1];
-            adj[u].push_back({v,1});
-            adj[v].push_back({u,0});
+            adj[u].push_back({v,0});
+            adj[v].push_back({u,1});
         }
         vector<int>vis(n,0);
         int ct = dfs(0,adj,vis);
-        return ct;
+        return connections.size()-ct;
     }
 };
