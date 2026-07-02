@@ -1,24 +1,27 @@
 class Solution {
 public:
-    int dfs(int i,unordered_map<int,vector<pair<int,int>>>&gr,vector<int>&vis){
-        vis[i] = true;
+    int dfs(int node,vector<vector<pair<int,int>>>&adj,vector<int>&vis){
+        vis[node] = 1;
         int ct = 0;
-        for(auto v : gr[i]){
-            if(!vis[v.first]){
-                ct+=dfs(v.first,gr,vis) + (v.second == 0 );
+        for(auto i:adj[node]){
+            int curr = i.first;
+            int dupli = i.second;
+            if(!vis[curr]){
+               ct += dupli + dfs(curr,adj,vis);
             }
         }
-
         return ct;
     }
     int minReorder(int n, vector<vector<int>>& connections) {
-        unordered_map<int,vector<pair<int,int>>>graph;
+        vector<vector<pair<int,int>>>adj(n);
         for(auto i:connections){
-            graph[i[0]].push_back({i[1],0});
-            graph[i[1]].push_back({i[0],1});
+            int u = i[0];
+            int v = i[1];
+            adj[u].push_back({v,1});
+            adj[v].push_back({u,0});
         }
-        vector<int>vis(n,false);
-        return dfs(0,graph,vis);
-        
+        vector<int>vis(n,0);
+        int ct = dfs(0,adj,vis);
+        return ct;
     }
 };
