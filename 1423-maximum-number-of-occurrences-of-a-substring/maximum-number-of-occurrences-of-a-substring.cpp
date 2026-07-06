@@ -1,32 +1,32 @@
 class Solution {
 public:
-    int maxFreq(string s, int maxLetters, int minSize, int maxSize) {
-        map<char,int>m;
-        map<string,int>mp;
-        int ct = 0;
-        for(int l = 0 , r = 0 ; r<s.size();r++){
-            m[s[r]]++;
-            
-            if(r-l+1 > minSize){
-                m[s[l]]--;
-                if(m[s[l]]== 0 ){
-                    m.erase(s[l]);
+    int maxFreq(string v, int maxLetters, int minSize, int maxSize) {
+        unordered_map<string,int>m;
+
+        unordered_map<char,int>ma;
+
+        int n = v.size();
+        for(int i = 0;i<n;i++){
+            ma[v[i]]++;
+            if(i>=minSize){
+                ma[v[i-minSize]]--;
+                if(ma[v[i-minSize]] == 0){
+                    ma.erase(v[i-minSize]);
                 }
-                l++;
             }
 
-            if(r-l+1==minSize && m.size()<=maxLetters){
-                string t = s.substr(l,r-l+1);
-                mp[t]++;
+            if(i>=minSize-1 && ma.size() <= maxLetters){
+                string temp = v.substr(i-minSize+1,minSize);
+                m[temp]++;
             }
-
         }
 
         int ans = 0;
-        for(auto i:mp){
+        for(auto i:m){
             ans = max(ans,i.second);
         }
 
         return ans;
+
     }
 };
