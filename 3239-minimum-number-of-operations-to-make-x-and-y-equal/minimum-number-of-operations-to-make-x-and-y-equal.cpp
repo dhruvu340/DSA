@@ -4,7 +4,7 @@ public:
         queue<pair<int,int>>q;
         q.push({x,0});
         int leftLimit = 1;
-        int rightLimit = 1e4;
+        int rightLimit = max(x, y) + 16;
         vector<bool>vis(rightLimit+1,false);
         vis[x] = 1;
         while(!q.empty()){
