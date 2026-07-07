@@ -1,26 +1,15 @@
 class Solution {
 public:
-    void bfs(int node ,vector<vector<int>>&adj,vector<bool>&vis){
-        queue<int>q;
-        q.push(node);
-        vis[node]=true;
-        while(!q.empty()){
-            int size=q.size();
-            while(size--){
-                int nextElement = q.front();
-                q.pop();
-                for(auto i:adj[nextElement]){
-                    if(!vis[i]){
-                        vis[i] = true;
-                        q.push(i);
-                    }
-                }
-            }
+    void traverse(int node,vector<bool>&vis,vector<vector<int>>&graph){
+        vis[node] = true;
+        for(auto i:graph[node]){
+            if(!vis[i])traverse(i,vis,graph);
         }
     }
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
-        vector<bool>vis(rooms.size(),false);
-        bfs(0,rooms,vis);
+        int n = rooms.size();
+        vector<bool>vis(n,false);
+        traverse(0,vis,rooms);
         for(auto i:vis){
             if(!i)return false;
         }
