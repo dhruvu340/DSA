@@ -28,23 +28,21 @@ public:
         m[node] = newNode;
         queue<Node*>q;
         q.push(node);
-        set<Node*>vis;
-        vis.insert(node);
+        
+        
         while(!q.empty()){
             int size = q.size();
             while(size--){
                 Node* front = q.front();
                 q.pop();
                 for(auto neig : front->neighbors){
-                   if(vis.find(neig)==vis.end()){
-                    vis.insert(neig);
+                   if(m.find(neig)==m.end()){
+                    
                     q.push(neig);
                     Node* newNode = new Node(neig->val,{});
                     m[neig] = newNode;
                    }
-                    m[front]->neighbors.push_back(m[neig]);
-                    
-                   
+                    m[front]->neighbors.push_back(m[neig]);  
                 }
             }
         }
