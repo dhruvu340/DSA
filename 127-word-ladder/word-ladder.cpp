@@ -1,32 +1,41 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        int sizeOfString = beginWord.size();
-        set<string>lookup(wordList.begin(),wordList.end());
+        unordered_set<string>wordSet(wordList.begin(),wordList.end());
+        map<string,vector<string>>adjNeigh;
+        int L = beginWord.size();
+        for(auto i:wordList){
+            for(int j = 0;j<L;j++){
+                string s = i.substr(0,j) + "*" + i.substr(j+1,L-j-1);
+                adjNeigh[s].push_back(i);
+            }
+        }
+
         queue<pair<string,int>>q;
         q.push({beginWord,1});
-        lookup.erase(beginWord);
+        wordSet.erase(beginWord);
+
         while(!q.empty()){
             int size = q.size();
             while(size--){
-                string word = q.front().first;
-                int seqSize = q.front().second;
+                string front = q.front().first;
+                int dist = q.front().second;
                 q.pop();
-                if(word == endWord)return seqSize;
-
-                for(int i=0;i<sizeOfString;i++){
-                    char orig = word[i];
-                    for(char c='a';c<='z';c++){
-                        word[i] = c;
-                        if(lookup.find(word)!=lookup.end()){
-                            q.push({word,seqSize+1});
-                            lookup.erase(word);
-                        }
-                    }
-                    word[i] = orig;
+                if(front == endWord){
+                    return dist;
                 }
+                for(int j = 0;j<L;j++){
+                string s = front.substr(0,j) + "*" + front.substr(j+1,L-j-1);
+                for(auto i:adjNeigh[s]){
+                    if(wordSet.find(i)!=wordSet.end()){
+                        wordSet.erase(i);
+                        q.push({i,dist+1});
+                    }
+                }
+            }
             }
         }
         return 0;
+
     }
 };
