@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 12 | 9 |
+| 13 | 13 |
 
 ---
 
@@ -15,12 +15,16 @@
 - [binary search](#binary-search) (1)
 - [brute force](#brute-force) (3)
 - [constructive algorithms](#constructive-algorithms) (4)
+- [dfs and similar](#dfs-and-similar) (1)
+- [graphs](#graphs) (1)
 - [greedy](#greedy) (6)
 - [implementation](#implementation) (1)
 - [math](#math) (8)
 - [number theory](#number-theory) (1)
+- [shortest paths](#shortest-paths) (1)
 - [sortings](#sortings) (2)
 - [strings](#strings) (1)
+- [trees](#trees) (1)
 
 ---
 
@@ -46,6 +50,18 @@
 | 2231B | [Another Sorting Problem](https://codeforces.com/contest/2231/problem/B) | 1100 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2231/B%20-%20Another%20Sorting%20Problem/solution.cpp) |
 | 2233B | [Different Distances](https://codeforces.com/contest/2233/problem/B) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2233/B%20-%20Different%20Distances/solution.cpp) |
 | 2234B | [Palindrome, Twelve and Two Terms](https://codeforces.com/contest/2234/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2234/B%20-%20Palindrome%2C%20Twelve%20and%20Two%20Terms/solution.cpp) |
+
+### dfs and similar
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1037D | [Valid BFS?](https://codeforces.com/contest/1037/problem/D) | 1700 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1037/D%20-%20Valid%20BFS%3F/solution.cpp) |
+
+### graphs
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1037D | [Valid BFS?](https://codeforces.com/contest/1037/problem/D) | 1700 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1037/D%20-%20Valid%20BFS%3F/solution.cpp) |
 
 ### greedy
 
@@ -83,6 +99,12 @@
 |---|---------|------------|----------|
 | 2234A | [Euclid, Sequence and Two Numbers](https://codeforces.com/contest/2234/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2234/A%20-%20Euclid%2C%20Sequence%20and%20Two%20Numbers/solution.cpp) |
 
+### shortest paths
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1037D | [Valid BFS?](https://codeforces.com/contest/1037/problem/D) | 1700 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1037/D%20-%20Valid%20BFS%3F/solution.cpp) |
+
 ### sortings
 
 | # | Problem | Difficulty | Solution |
@@ -95,6 +117,12 @@
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
 | 2236B | [Tatar TV Show](https://codeforces.com/contest/2236/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2236/B%20-%20Tatar%20TV%20Show/solution.cpp) |
+
+### trees
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1037D | [Valid BFS?](https://codeforces.com/contest/1037/problem/D) | 1700 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1037/D%20-%20Valid%20BFS%3F/solution.cpp) |
 
 ---
 
