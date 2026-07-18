@@ -21,19 +21,24 @@ void precompute() { fact[0] = 1;for (int i = 1; i <= MAXN; i++) { fact[i] = modm
 int nCr(int n, int r) { if (r < 0 || r > n) return 0; return modmul(fact[n], modmul(invfact[r], invfact[n-r]));}
 vector<int> sieve(int n) {int*arr = new int[n + 1](); vector<int> vect; for (int i = 2; i <= n; i++)if (arr[i] == 0) {vect.push_back(i); for (int j = 2 * i; j <= n; j += i)arr[j] = 1;} return vect;}  
 ll gcd(ll a, ll b) {if (b > a) {return gcd(b, a);} if (b == 0) {return a;} return gcd(b, a % b);} 
- 
+int howManyTimes = 0;
+vector<int>dp(MAXN,-1);
+ 
 void solve(){
-    int n,l;
-    cin>>n>>l;
+    
+    int n,k;
+    cin>>n>>k;
     vector<int>v(n);
     for(auto &i:v)cin>>i;
-    if(is_sorted(all(v))||l>=2){
-       cout<<"YES"<<endl; 
+    if(is_sorted(all(v)) || k>=2){
+        cout<<"YES"<<endl;
     }else{
         cout<<"NO"<<endl;
     }
-}   
- 
+ 
+    
+}
+ 
 int32_t main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
