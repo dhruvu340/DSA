@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 15 | 13 |
+| 16 | 13 |
 
 ---
 
@@ -14,16 +14,16 @@
 
 - [binary search](#binary-search) (1)
 - [brute force](#brute-force) (4)
-- [constructive algorithms](#constructive-algorithms) (4)
+- [constructive algorithms](#constructive-algorithms) (5)
 - [dfs and similar](#dfs-and-similar) (1)
 - [graphs](#graphs) (1)
-- [greedy](#greedy) (8)
-- [implementation](#implementation) (1)
+- [greedy](#greedy) (9)
+- [implementation](#implementation) (2)
 - [math](#math) (9)
 - [number theory](#number-theory) (1)
 - [shortest paths](#shortest-paths) (1)
 - [sortings](#sortings) (3)
-- [strings](#strings) (1)
+- [strings](#strings) (2)
 - [trees](#trees) (1)
 
 ---
@@ -47,6 +47,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 2231A | [Construct an Array](https://codeforces.com/contest/2231/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2231/A%20-%20Construct%20an%20Array/solution.cpp) |
 | 2231B | [Another Sorting Problem](https://codeforces.com/contest/2231/problem/B) | 1100 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2231/B%20-%20Another%20Sorting%20Problem/solution.cpp) |
 | 2233B | [Different Distances](https://codeforces.com/contest/2233/problem/B) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2233/B%20-%20Different%20Distances/solution.cpp) |
@@ -68,6 +69,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 1901A | [Line Trip](https://codeforces.com/contest/1901/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1901/A%20-%20Line%20Trip/solution.cpp) |
 | 1903A | [Halloumi Boxes](https://codeforces.com/contest/1903/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1903/A%20-%20Halloumi%20Boxes/solution.cpp) |
 | 2230B | [Digit String](https://codeforces.com/contest/2230/problem/B) | 1000 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2230/B%20-%20Digit%20String/solution.cpp) |
@@ -81,6 +83,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 2230B | [Digit String](https://codeforces.com/contest/2230/problem/B) | 1000 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2230/B%20-%20Digit%20String/solution.cpp) |
 
 ### math
@@ -121,6 +124,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 2236B | [Tatar TV Show](https://codeforces.com/contest/2236/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2236/B%20-%20Tatar%20TV%20Show/solution.cpp) |
 
 ### trees
