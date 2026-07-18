@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 16 | 13 |
+| 17 | 14 |
 
 ---
 
@@ -16,11 +16,12 @@
 - [brute force](#brute-force) (4)
 - [constructive algorithms](#constructive-algorithms) (5)
 - [dfs and similar](#dfs-and-similar) (1)
+- [games](#games) (1)
 - [graphs](#graphs) (1)
 - [greedy](#greedy) (9)
 - [implementation](#implementation) (2)
-- [math](#math) (9)
-- [number theory](#number-theory) (1)
+- [math](#math) (10)
+- [number theory](#number-theory) (2)
 - [shortest paths](#shortest-paths) (1)
 - [sortings](#sortings) (3)
 - [strings](#strings) (2)
@@ -59,6 +60,12 @@
 |---|---------|------------|----------|
 | 1037D | [Valid BFS?](https://codeforces.com/contest/1037/problem/D) | 1700 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1037/D%20-%20Valid%20BFS%3F/solution.cpp) |
 
+### games
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1899A | [Game with Integers](https://codeforces.com/contest/1899/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1899/A%20-%20Game%20with%20Integers/solution.cpp) |
+
 ### graphs
 
 | # | Problem | Difficulty | Solution |
@@ -90,6 +97,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1899A | [Game with Integers](https://codeforces.com/contest/1899/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1899/A%20-%20Game%20with%20Integers/solution.cpp) |
 | 1901A | [Line Trip](https://codeforces.com/contest/1901/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1901/A%20-%20Line%20Trip/solution.cpp) |
 | 2230B | [Digit String](https://codeforces.com/contest/2230/problem/B) | 1000 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2230/B%20-%20Digit%20String/solution.cpp) |
 | 2232B | [Cake Leveling](https://codeforces.com/contest/2232/problem/B) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2232/B%20-%20Cake%20Leveling/solution.cpp) |
@@ -104,6 +112,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1899A | [Game with Integers](https://codeforces.com/contest/1899/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1899/A%20-%20Game%20with%20Integers/solution.cpp) |
 | 2234A | [Euclid, Sequence and Two Numbers](https://codeforces.com/contest/2234/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2234/A%20-%20Euclid%2C%20Sequence%20and%20Two%20Numbers/solution.cpp) |
 
 ### shortest paths
