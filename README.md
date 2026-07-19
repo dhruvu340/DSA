@@ -6,20 +6,20 @@
 
 | Total Problems | Topics |
 |---|---|
-| 22 | 14 |
+| 23 | 14 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
 - [binary search](#binary-search) (1)
-- [brute force](#brute-force) (5)
+- [brute force](#brute-force) (6)
 - [constructive algorithms](#constructive-algorithms) (6)
 - [dfs and similar](#dfs-and-similar) (1)
 - [games](#games) (1)
 - [graphs](#graphs) (1)
 - [greedy](#greedy) (10)
-- [implementation](#implementation) (3)
+- [implementation](#implementation) (4)
 - [math](#math) (11)
 - [number theory](#number-theory) (2)
 - [shortest paths](#shortest-paths) (1)
@@ -41,6 +41,7 @@
 |---|---------|------------|----------|
 | 1853A | [Desorting](https://codeforces.com/contest/1853/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1853/A%20-%20Desorting/solution.cpp) |
 | 1903A | [Halloumi Boxes](https://codeforces.com/contest/1903/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1903/A%20-%20Halloumi%20Boxes/solution.cpp) |
+| 1904A | [Forked!](https://codeforces.com/contest/1904/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1904/A%20-%20Forked!/solution.cpp) |
 | 2233A | [AI Project Development](https://codeforces.com/contest/2233/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2233/A%20-%20AI%20Project%20Development/solution.cpp) |
 | 2234B | [Palindrome, Twelve and Two Terms](https://codeforces.com/contest/2234/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2234/B%20-%20Palindrome%2C%20Twelve%20and%20Two%20Terms/solution.cpp) |
 | 2236C | [Omsk Programmers](https://codeforces.com/contest/2236/problem/C) | 1000 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2236/C%20-%20Omsk%20Programmers/solution.cpp) |
@@ -95,6 +96,7 @@
 |---|---------|------------|----------|
 | 263A | [Beautiful Matrix](https://codeforces.com/contest/263/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/263/A%20-%20Beautiful%20Matrix/solution.cpp) |
 | 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
+| 1904A | [Forked!](https://codeforces.com/contest/1904/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1904/A%20-%20Forked!/solution.cpp) |
 | 2230B | [Digit String](https://codeforces.com/contest/2230/problem/B) | 1000 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2230/B%20-%20Digit%20String/solution.cpp) |
 
 ### math
