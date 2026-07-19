@@ -21,25 +21,25 @@ void precompute() { fact[0] = 1;for (int i = 1; i <= MAXN; i++) { fact[i] = modm
 int nCr(int n, int r) { if (r < 0 || r > n) return 0; return modmul(fact[n], modmul(invfact[r], invfact[n-r]));}
 vector<int> sieve(int n) {int*arr = new int[n + 1](); vector<int> vect; for (int i = 2; i <= n; i++)if (arr[i] == 0) {vect.push_back(i); for (int j = 2 * i; j <= n; j += i)arr[j] = 1;} return vect;}  
 ll gcd(ll a, ll b) {if (b > a) {return gcd(b, a);} if (b == 0) {return a;} return gcd(b, a % b);} 
- 
-void solve(){
-    pair<int,int>xy;
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
-            int x; 
-            cin>>x;
-            if(x==1){
-                xy={i,j};
+int howManyTimes = 0;
+vector<int>dp(MAXN,-1);
  
+void solve(){
+    
+    int ans = 0;
+    int n=5;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            int x;
+            cin>>x;
+            if(x!=0){
+                ans=abs(2-i)+abs(2-j);
             }
         }
     }
+    cout<<ans<<endl;
+}
  
- 
-    cout<<abs(2-xy.first) + abs(2-xy.second)<<endl;
- 
-    }   
- 
 int32_t main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
