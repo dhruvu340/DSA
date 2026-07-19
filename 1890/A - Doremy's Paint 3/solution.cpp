@@ -30,19 +30,14 @@ void solve(){
     cin>>n;
     vector<int>v(n);
     for(auto &i:v)cin>>i;
-    map<int,int>m;
+    map<int, int> m;
     for(auto i:v)m[i]++;
- 
-    if(m.size() > 2){
-        cout<<"No"<<endl;
+    if(m.size()>2||abs(m.begin()->second-m.rbegin()->second)>1){
+        cout<<"NO"<<endl;
     }else{
-        int diff = abs(m.begin()->second - m.rbegin()->second);
-        if(diff > 1){
-            cout<<"No"<<endl;
-        }else{
-            cout<<"Yes"<<endl;
-        }
+        cout<<"YES"<<endl;
     }
+    
 }
  
 int32_t main() {
