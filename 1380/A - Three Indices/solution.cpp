@@ -33,29 +33,26 @@ void solve(){
    cin>>n;
    vector<int>v(n);
     for(auto &i:v)cin>>i;
-   for(int i=0;i<n;i++){
-    int right = -1;
-    int left = -1;
-    for(int j = i+1;j<n;j++){
-        if(v[j]<v[i]){
-            right = j;
-            break;
-        }
-    }
-    for(int j = i-1;j>=0;j--){
-        if(v[j]<v[i]){
-            left = j;
-            break;
-        }
+   vector<int>prefixmin(n);
+    
+    vector<int>suffixmin(n);
+    prefixmin[0] = 0;
+    suffixmin[n-1]=n-1;
+    for(int i=1;i<n;i++){
+        prefixmin[i] = (v[i]<v[prefixmin[i-1]]) ? i : prefixmin[i-1];
     }
  
-    if(left >= 0 && right >= 0 ){
-        cout<<"YES"<<endl;
-        cout<<left+1 << " "<<i+1<<" "<<right+1<<endl;
-        return;
+    for(int i=n-2;i>=0;i--){
+        suffixmin[i] = (v[i]<v[suffixmin[i+1]]) ? i : suffixmin[i+1];
     }
-   }
  
+    for(int i=1;i<n-1;i++){
+        if(v[prefixmin[i-1]] < v[i] && v[suffixmin[i+1]] < v[i]){
+            cout<<"YES"<<endl;
+            cout<<prefixmin[i-1] + 1 <<" "<<i+1<<" "<<suffixmin[i+1]+1<<endl;
+            return ;
+        }
+    }
  
    cout<<"NO"<<endl;
 }
