@@ -1,0 +1,74 @@
+#include "bits/stdc++.h"
+using namespace std;
+ 
+#define int long long
+#define ll long long
+const int MOD=1e9+7;
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define pb push_back
+#define sz(a) (int)a.size()
+const int MAXN = 1000000;
+int fact[MAXN+1], invfact[MAXN+1];
+ 
+int modmul(int a,int b){return ((a%MOD)*(b%MOD))%MOD;}
+int modpow(int base,int p){ int ans=1; base%=MOD;   while(p){if(p%2==1){ ans= modmul(base,ans);}  base=modmul(base,base); p/=2;}return ans;}
+int moddiv(int a , int b){return modmul(a,modpow(b,MOD-2));};
+int modadd(int a, int b) {return ((a % MOD) + (b % MOD)) % MOD;}
+int modsub(int a, int b) {return ((a % MOD) - (b % MOD) + MOD) % MOD;}
+int modinv(int a) { return modpow(a, MOD - 2);}
+void precompute() { fact[0] = 1;for (int i = 1; i <= MAXN; i++) { fact[i] = modmul(fact[i-1], i);  } invfact[MAXN] = modinv(fact[MAXN]); for (int i = MAXN-1; i >= 0; i--) {invfact[i] = modmul(invfact[i+1], i+1);}}
+int nCr(int n, int r) { if (r < 0 || r > n) return 0; return modmul(fact[n], modmul(invfact[r], invfact[n-r]));}
+vector<int> sieve(int n) {int*arr = new int[n + 1](); vector<int> vect; for (int i = 2; i <= n; i++)if (arr[i] == 0) {vect.push_back(i); for (int j = 2 * i; j <= n; j += i)arr[j] = 1;} return vect;}  
+ll gcd(ll a, ll b) {if (b > a) {return gcd(b, a);} if (b == 0) {return a;} return gcd(b, a % b);} 
+int howManyTimes = 0;
+vector<int>dp(MAXN,-1);
+ 
+ 
+ 
+ 
+void solve(){
+    
+   int n;
+   cin>>n;
+   vector<int>v(n);
+    for(auto &i:v)cin>>i;
+   for(int i=0;i<n;i++){
+    int right = -1;
+    int left = -1;
+    for(int j = i+1;j<n;j++){
+        if(v[j]<v[i]){
+            right = j;
+            break;
+        }
+    }
+    for(int j = i-1;j>=0;j--){
+        if(v[j]<v[i]){
+            left = j;
+            break;
+        }
+    }
+ 
+    if(left >= 0 && right >= 0 ){
+        cout<<"YES"<<endl;
+        cout<<left+1 << " "<<i+1<<" "<<right+1<<endl;
+        return;
+    }
+   }
+ 
+ 
+   cout<<"NO"<<endl;
+}
+ 
+int32_t main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int t = 1;
+    // sieveandspf();
+    // precompute();
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+}
