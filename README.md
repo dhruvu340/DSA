@@ -6,15 +6,15 @@
 
 | Total Problems | Topics |
 |---|---|
-| 23 | 14 |
+| 24 | 14 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
 - [binary search](#binary-search) (1)
-- [brute force](#brute-force) (6)
-- [constructive algorithms](#constructive-algorithms) (6)
+- [brute force](#brute-force) (7)
+- [constructive algorithms](#constructive-algorithms) (7)
 - [dfs and similar](#dfs-and-similar) (1)
 - [games](#games) (1)
 - [graphs](#graphs) (1)
@@ -39,6 +39,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1761A | [Two Permutations](https://codeforces.com/contest/1761/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1761/A%20-%20Two%20Permutations/solution.cpp) |
 | 1853A | [Desorting](https://codeforces.com/contest/1853/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1853/A%20-%20Desorting/solution.cpp) |
 | 1903A | [Halloumi Boxes](https://codeforces.com/contest/1903/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1903/A%20-%20Halloumi%20Boxes/solution.cpp) |
 | 1904A | [Forked!](https://codeforces.com/contest/1904/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1904/A%20-%20Forked!/solution.cpp) |
@@ -50,6 +51,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1761A | [Two Permutations](https://codeforces.com/contest/1761/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1761/A%20-%20Two%20Permutations/solution.cpp) |
 | 1890A | [Doremy's Paint 3](https://codeforces.com/contest/1890/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1890/A%20-%20Doremy's%20Paint%203/solution.cpp) |
 | 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 2231A | [Construct an Array](https://codeforces.com/contest/2231/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2231/A%20-%20Construct%20an%20Array/solution.cpp) |
