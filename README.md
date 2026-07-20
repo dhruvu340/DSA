@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 24 | 14 |
+| 25 | 14 |
 
 ---
 
@@ -18,9 +18,9 @@
 - [dfs and similar](#dfs-and-similar) (1)
 - [games](#games) (1)
 - [graphs](#graphs) (1)
-- [greedy](#greedy) (10)
+- [greedy](#greedy) (11)
 - [implementation](#implementation) (4)
-- [math](#math) (11)
+- [math](#math) (12)
 - [number theory](#number-theory) (2)
 - [shortest paths](#shortest-paths) (1)
 - [sortings](#sortings) (4)
@@ -81,6 +81,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1777A | [Everybody Likes Good Arrays!](https://codeforces.com/contest/1777/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1777/A%20-%20Everybody%20Likes%20Good%20Arrays!/solution.cpp) |
 | 1853A | [Desorting](https://codeforces.com/contest/1853/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1853/A%20-%20Desorting/solution.cpp) |
 | 1900A | [Cover in Water](https://codeforces.com/contest/1900/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1900/A%20-%20Cover%20in%20Water/solution.cpp) |
 | 1901A | [Line Trip](https://codeforces.com/contest/1901/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1901/A%20-%20Line%20Trip/solution.cpp) |
@@ -105,6 +106,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1777A | [Everybody Likes Good Arrays!](https://codeforces.com/contest/1777/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1777/A%20-%20Everybody%20Likes%20Good%20Arrays!/solution.cpp) |
 | 1853A | [Desorting](https://codeforces.com/contest/1853/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1853/A%20-%20Desorting/solution.cpp) |
 | 1899A | [Game with Integers](https://codeforces.com/contest/1899/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1899/A%20-%20Game%20with%20Integers/solution.cpp) |
 | 1901A | [Line Trip](https://codeforces.com/contest/1901/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1901/A%20-%20Line%20Trip/solution.cpp) |
