@@ -6,15 +6,16 @@
 
 | Total Problems | Topics |
 |---|---|
-| 25 | 14 |
+| 26 | 15 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
 - [binary search](#binary-search) (1)
-- [brute force](#brute-force) (7)
+- [brute force](#brute-force) (8)
 - [constructive algorithms](#constructive-algorithms) (7)
+- [data structures](#data-structures) (1)
 - [dfs and similar](#dfs-and-similar) (1)
 - [games](#games) (1)
 - [graphs](#graphs) (1)
@@ -39,6 +40,7 @@
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1380A | [Three Indices](https://codeforces.com/contest/1380/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1380/A%20-%20Three%20Indices/solution.cpp) |
 | 1761A | [Two Permutations](https://codeforces.com/contest/1761/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1761/A%20-%20Two%20Permutations/solution.cpp) |
 | 1853A | [Desorting](https://codeforces.com/contest/1853/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1853/A%20-%20Desorting/solution.cpp) |
 | 1903A | [Halloumi Boxes](https://codeforces.com/contest/1903/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1903/A%20-%20Halloumi%20Boxes/solution.cpp) |
@@ -58,6 +60,12 @@
 | 2231B | [Another Sorting Problem](https://codeforces.com/contest/2231/problem/B) | 1100 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2231/B%20-%20Another%20Sorting%20Problem/solution.cpp) |
 | 2233B | [Different Distances](https://codeforces.com/contest/2233/problem/B) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2233/B%20-%20Different%20Distances/solution.cpp) |
 | 2234B | [Palindrome, Twelve and Two Terms](https://codeforces.com/contest/2234/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/2234/B%20-%20Palindrome%2C%20Twelve%20and%20Two%20Terms/solution.cpp) |
+
+### data structures
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1380A | [Three Indices](https://codeforces.com/contest/1380/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/dhruvu340/DSA/blob/HEAD/1380/A%20-%20Three%20Indices/solution.cpp) |
 
 ### dfs and similar
 
